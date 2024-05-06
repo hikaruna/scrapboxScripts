@@ -7,7 +7,7 @@ for(const twitterLink of twitterLinks) {
   if(href == null) { throw 'href is null'; }
   //const {html} = await fetchJsonp(`https://publish.twitter.com/oembed?url=${encodeURIComponent(href)}&omit_script=true`);
   const tweetId = href.match(/https:\/\/(?:x|twitter)\.com\/[^/]+\/status\/([0-9]+)/)?.[1];
-  if(tweetId == null) { throw 'tweetId is null'; }a
+  if(tweetId == null) { throw 'tweetId is null'; }
   const div = document.createElement('div');
   twitterLink.closest('div.line')?.insertAdjacentElement('afterend', div);
   window.twttr.widgets.createTweet(tweetId, div);
